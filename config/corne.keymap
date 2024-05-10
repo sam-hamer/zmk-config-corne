@@ -84,27 +84,27 @@
 
         default_layer {
             bindings = <
-&none  &kp Q       &kp W       &kp E        &kp R         &kp T             &kp Y               &kp U          &kp I           &kp O       &kp P     &none
-&none  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G             &kp H               &hm RSHIFT J   &hm RCTRL K     &hm RALT L  &td0      &none
-&none  &kp Z       &kp X       &kp C        &kp V         &kp B             &kp N               &kp M          &kp COMMA       &kp DOT     &kp FSLH  &none
-                               &td1         &lt NUM TAB   &mt LGUI ENTER    &mt RGUI BACKSPACE  &lt SYM SPACE  &mt RALT GRAVE
+&kp TAB         &kp Q  &kp W  &kp E          &kp R        &kp T             &kp Y               &kp U          &kp I           &kp O    &kp P          &kp DELETE
+&kp LCTRL       &kp A  &kp S  &kp D          &kp F        &kp G             &kp H               &kp J          &kp K           &kp L    &kp SEMICOLON  &kp SQT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C          &kp V        &kp B             &kp N               &kp M          &kp COMMA       &kp DOT  &kp FSLH       &kp ESCAPE
+                              &mt LCTRL ESC  &lt NUM TAB  &mt LGUI ENTER    &mt RGUI BACKSPACE  &lt SYM SPACE  &mt RALT GRAVE
             >;
         };
 
         num_layer {
             bindings = <
-&none  &none       &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP    &kp PLUS   &kp N7    &kp N8  &kp N9  &kp KP_MULTIPLY  &none
-&none  &kp SUPER   &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN    &kp MINUS  &kp N4    &kp N5  &kp N6  &kp SLASH        &none
-&none  &kp SUPER2  &none         &none     &kp HOME       &kp END      &kp N0     &kp N1    &kp N2  &kp N3  &kp DOT          &none
-                                 &trans    &trans         &trans       &trans     &mo FUNC  &trans
+&none  &none  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp PG_UP    &kp PLUS   &kp N7    &kp N8  &kp N9  &kp KP_MULTIPLY  &none
+&none  &none  &kp LEFT      &kp DOWN  &kp RIGHT      &kp PG_DN    &kp MINUS  &kp N4    &kp N5  &kp N6  &kp SLASH        &none
+&none  &none  &none         &none     &kp HOME       &kp END      &kp N0     &kp N1    &kp N2  &kp N3  &kp DOT          &none
+                            &trans    &trans         &trans       &trans     &mo FUNC  &trans
             >;
         };
 
         sym_layer {
             bindings = <
-&none  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
-&none  &kp GRAVE  &kp TILDE  &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
-&none  &kp TILDE  &none      &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
+&none  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_MULTIPLY  &none
+&none  &kp GRAVE  &kp TILDE  &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &none
+&none  &kp TILDE  &none      &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &none
                              &trans    &mo FUNC  &trans       &trans     &trans     &trans
             >;
         };
