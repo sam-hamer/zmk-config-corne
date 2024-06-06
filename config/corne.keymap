@@ -14,20 +14,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        host_behaviors {
-            zm_host_behaviour {
-                // Switch to the default_layer when connected to a host with the name "MacBook"
-                // or vendor ID 0x05AC (Apple).
-                zm_host = "MacBook";
-                zm_host_idVendor = <0x05AC>;
-                zm_host_layer = <&default_layer>;
-
-                // Switch to the windows_layer when connected to any other host.
-                zm_host_default {
-                    zm_host_layer = <&windows_layer>;
-                };
-            };
-        };
+        
 
         default_layer {
             // -----------------------------------------------------------------------------------------
@@ -96,6 +83,20 @@
 &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_NXT    &trans  &trans  &trans  &trans  &trans   &trans
                                           &trans        &trans        &trans        &trans  &trans  &trans
             >;
+        };
+        host_behaviors {
+            zm_host_behaviour {
+                // Switch to the default_layer when connected to a host with the name "MacBook"
+                // or vendor ID 0x05AC (Apple).
+                zm_host = "MacBook";
+                zm_host_idVendor = <0x05AC>;
+                zm_host_layer = <&default_layer>;
+
+                // Switch to the windows_layer when connected to any other host.
+                zm_host_default {
+                    zm_host_layer = <&windows_layer>;
+                };
+            };
         };
     };
 };
