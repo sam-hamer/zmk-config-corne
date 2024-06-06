@@ -9,9 +9,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
 / {
     keymap {
         compatible = "zmk,keymap";
+
+        host_behaviors {
+            zm_host_behaviour {
+                // Switch to the default_layer when connected to a host with the name "MacBook"
+                // or vendor ID 0x05AC (Apple).
+                zm_host "MacBook" 0x05AC {
+                    zm_host_layer = <&default_layer>;
+                };
+
+                // Switch to the windows_layer when connected to any other host.
+                zm_host_default {
+                    zm_host_layer = <&windows_layer>;
+                };
+            };
+        };
 
         default_layer {
             // -----------------------------------------------------------------------------------------
@@ -24,7 +40,22 @@
 &kp TAB    &kp Q  &kp W  &kp E                 &kp R         &kp T                 &kp Y                &kp U            &kp I                &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D                 &kp F         &kp G                 &kp H                &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C                 &kp V         &kp B                 &kp N                &kp M            &kp COMMA            &kp DOT  &kp FSLH  &kp ESC
-                         &mt LEFT_CONTROL TAB  &lt 1 ESCAPE  &mt LEFT_GUI ENTER    &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
+                         &mt LEFT_CONTROL ESCAPE  &lt 1 TAB  &mt LEFT_GUI ENTER    &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
+            >;
+        };
+
+        windows_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E                 &kp R         &kp T                 &kp Y                &kp U            &kp I                &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D                 &kp F         &kp G                 &kp H                &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C                 &kp V         &kp B                 &kp N                &kp M            &kp COMMA            &kp DOT  &kp FSLH  &kp ESC
+                         &mt LEFT_CONTROL ESCAPE  &lt 1 TAB  &mt LEFT_ALT ENTER    &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
             >;
         };
 
