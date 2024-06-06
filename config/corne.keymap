@@ -90,18 +90,20 @@
                                           &trans        &trans        &trans        &trans  &trans  &trans
             >;
         };
-    };
 
-    layer_switch {
-        label = "Layer Switch";
-        compatible = "zmk,behavior";
-        bindings = <&os_host>;
-    };
+        // Define the OS detection behavior
+        os_layer_switch {
+            label = "OS Layer Switch";
+            compatible = "zmk,layer-switch";
+            bindings = <&os_host>;
+        };
 
-    os_host {
-        label = "OS Host";
-        compatible = "zmk,behavior-host";
-        mac-layer = &mac_layer;
-        windows-layer = &windows_layer;
+        // Define the host OS condition
+        os_host {
+            label = "OS Host";
+            compatible = "zmk,behavior-host";
+            mac-layer = <&mac_layer>;
+            windows-layer = <&windows_layer>;
+        };
     };
 };
