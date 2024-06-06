@@ -19,30 +19,6 @@
     //    func_layer;
     //};
 
-    &mac_layer {
-        bindings = <&kp A>, <&kp S>, <&kp D>, <&kp F>, ... ;
-        os-host-mac = &mac_layer;
-    };
-
-    &windows_layer {
-        bindings = <&kp Z>, <&kp X>, <&kp C>, <&kp V>, ... ;
-        os-host-windows = &windows_layer;
-    };
-
-
-    &layer_switch {
-        label = "Layer Switch";
-        compatible = "zmk,behavior";
-        bindings = <&os_host>;
-    };
-
-    &os_host {
-        label = "OS Host";
-        compatible = "zmk,behavior-host";
-        mac-layer = &mac_layer;
-        windows-layer = &windows_layer;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -115,6 +91,19 @@
 &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_NXT    &trans  &trans  &trans  &trans  &trans   &trans
                                           &trans        &trans        &trans        &trans  &trans  &trans
             >;
+        };
+
+        &layer_switch {
+            label = "Layer Switch";
+            compatible = "zmk,behavior";
+            bindings = <&os_host>;
+        };
+
+        &os_host {
+            label = "OS Host";
+            compatible = "zmk,behavior-host";
+            mac-layer = &mac_layer;
+            windows-layer = &windows_layer;
         };
     };
 };
