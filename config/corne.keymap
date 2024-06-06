@@ -18,9 +18,9 @@
             zm_host_behaviour {
                 // Switch to the default_layer when connected to a host with the name "MacBook"
                 // or vendor ID 0x05AC (Apple).
-                zm_host "MacBook" 0x05AC {
-                    zm_host_layer = <&default_layer>;
-                };
+                zm_host = "MacBook";
+                zm_host_idVendor = 0x05AC;
+                zm_host_layer = <&default_layer>;
 
                 // Switch to the windows_layer when connected to any other host.
                 zm_host_default {
