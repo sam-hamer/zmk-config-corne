@@ -22,8 +22,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        
-
         mac_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
@@ -92,18 +90,18 @@
                                           &trans        &trans        &trans        &trans  &trans  &trans
             >;
         };
+    };
 
-        &layer_switch {
-            label = "Layer Switch";
-            compatible = "zmk,behavior";
-            bindings = <&os_host>;
-        };
+    &layer_switch {
+        label = "Layer Switch";
+        compatible = "zmk,behavior";
+        bindings = <&os_host>;
+    };
 
-        &os_host {
-            label = "OS Host";
-            compatible = "zmk,behavior-host";
-            mac-layer = &mac_layer;
-            windows-layer = &windows_layer;
-        };
+    &os_host {
+        label = "OS Host";
+        compatible = "zmk,behavior-host";
+        mac-layer = &mac_layer;
+        windows-layer = &windows_layer;
     };
 };
