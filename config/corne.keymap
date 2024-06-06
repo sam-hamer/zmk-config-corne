@@ -11,11 +11,21 @@
 
 
 / {
+    layers {
+        default_layer;
+        windows_layer;
+        lower_layer;
+        upper_layer;
+        func_layer;
+    };
 
     host_behaviors {
         zm_host_behaviour {
             // Switch to the default_layer when connected to a host with the name "MacBook"
             // or vendor ID 0x05AC (Apple).
+            zm_host = "MacBook";
+            zm_host_idVendor = <0x05AC>;
+            zm_host_layer = <&default_layer>;
 
             // Switch to the windows_layer when connected to any other host.
             zm_host_default {
@@ -89,7 +99,7 @@
             >;
         };
 
-        FUNC_LAYER {
+        func_layer {
             bindings = <
 &out OUT_TOG    &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
 &trans          &trans      &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans   &kp F12
