@@ -1,72 +1,44 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+/ {
+    keymap {
+        compatible = "zmk,keymap";
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
+        // Define the default layer
+        default_layer {
+            bindings = <&kp Q>, <&kp W>, <&kp E>, <&kp R>, <&kp T>, <&kp Y>, <&kp U>, <&kp I>, <&kp O>, <&kp P>,
+                       <&kp A>, <&kp S>, <&kp D>, <&kp F>, <&kp G>, <&kp H>, <&kp J>, <&kp K>, <&kp L>, <&kp SEMICOLON>,
+                       <&kp Z>, <&kp X>, <&kp C>, <&kp V>, <&kp B>, <&kp N>, <&kp M>, <&kp COMMA>, <&kp DOT>, <&kp SLASH>,
+                       <&kp ESC>, <&kp TAB>, <&kp SPACE>, <&kp ENTER>, <&kp BACKSPACE>, <&kp SHIFT>, <&kp CTRL>, <&kp ALT>, <&kp GUI>, <&kp CAPSLOCK>;
+        };
 
-&keymap {
-    compatible = "zmk,keymap";
+        // Define the Mac-specific layer
+        mac_layer {
+            bindings = <&kp Q>, <&kp W>, <&kp E>, <&kp R>, <&kp T>, <&kp Y>, <&kp U>, <&kp I>, <&kp O>, <&kp P>,
+                       <&kp A>, <&kp S>, <&kp D>, <&kp F>, <&kp G>, <&kp H>, <&kp J>, <&kp K>, <&kp L>, <&kp SEMICOLON>,
+                       <&kp Z>, <&kp X>, <&kp C>, <&kp V>, <&kp B>, <&kp N>, <&kp M>, <&kp COMMA>, <&kp DOT>, <&kp SLASH>,
+                       <&kp ESC>, <&kp TAB>, <&kp SPACE>, <&kp ENTER>, <&kp BACKSPACE>, <&kp SHIFT>, <&kp CTRL>, <&kp OPTION>, <&kp CMD>, <&kp CAPSLOCK>;
+        };
 
-    mac_layer: mac_layer {
-        bindings = <
-            &kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T    &kp Y  &kp U  &kp I  &kp O    &kp P     &kp BSPC
-            &kp LCTRL  &kp A  &kp S  &kp D   &kp F   &kp G    &kp H  &kp J  &kp K  &kp L    &kp SEMI  &kp SQT
-            &kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B    &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                     &mt LEFT_CONTROL ESCAPE  &lt 1 TAB  &mt LEFT_GUI ENTER  &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
-        >;
-    };
+        // Define the Windows-specific layer
+        windows_layer {
+            bindings = <&kp Q>, <&kp W>, <&kp E>, <&kp R>, <&kp T>, <&kp Y>, <&kp U>, <&kp I>, <&kp O>, <&kp P>,
+                       <&kp A>, <&kp S>, <&kp D>, <&kp F>, <&kp G>, <&kp H>, <&kp J>, <&kp K>, <&kp L>, <&kp SEMICOLON>,
+                       <&kp Z>, <&kp X>, <&kp C>, <&kp V>, <&kp B>, <&kp N>, <&kp M>, <&kp COMMA>, <&kp DOT>, <&kp SLASH>,
+                       <&kp ESC>, <&kp TAB>, <&kp SPACE>, <&kp ENTER>, <&kp BACKSPACE>, <&kp SHIFT>, <&kp CTRL>, <&kp ALT>, <&kp WIN>, <&kp CAPSLOCK>;
+        };
 
-    windows_layer: windows_layer {
-        bindings = <
-            &kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T    &kp Y  &kp U  &kp I  &kp O    &kp P     &kp BSPC
-            &kp LCTRL  &kp A  &kp S  &kp D   &kp F   &kp G    &kp H  &kp J  &kp K  &kp L    &kp SEMI  &kp SQT
-            &kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B    &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                     &mt LEFT_CONTROL ESCAPE  &lt 1 TAB  &mt LEFT_ALT ENTER  &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
-        >;
-    };
+        // Define the OS detection behavior
+        os_layer_switch {
+            label = "OS Layer Switch";
+            compatible = "zmk,layer-switch";
+            bindings = <&os_host>;
+        };
 
-    lower_layer: lower_layer {
-        bindings = <
-            &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
-            &trans   &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-            &kp LSHFT &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                          &trans  &trans  &trans  &trans    &mo 3     &trans
-        >;
-    };
-
-    raise_layer: raise_layer {
-        bindings = <
-            &kp TAB    &kp EXCL  &kp AT   &kp HASH  &kp DLLR &kp PRCNT   &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-            &kp LCTRL  &kp LEFT_BRACKET &kp LESS_THAN &kp LEFT_BRACE  &kp LEFT_PARENTHESIS &kp PAGE_UP &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT &kp RBKT &kp GRAVE
-            &kp LSHFT  &kp RIGHT_BRACKET  &kp GREATER_THAN &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS &kp PAGE_DOWN  &kp UNDER  &kp PLUS  &kp PIPE  &kp LEFT_BRACE &kp RIGHT_BRACE &kp TILDE
-                        &trans  &mo 3     &trans  &trans &trans &trans
-        >;
-    };
-
-    func_layer: func_layer {
-        bindings = <
-            &out OUT_TOG    &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-            &trans          &trans      &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans   &kp F12
-            &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_NXT    &trans  &trans  &trans  &trans  &trans   &trans
-                                            &trans        &trans        &trans        &trans  &trans  &trans
-        >;
-    };
-
-    os_layer_switch: os_layer_switch {
-        label = "OS Layer Switch";
-        compatible = "zmk,layer-switch";
-        bindings = <&os_host>;
-    };
-
-    os_host: os_host {
-        label = "OS Host";
-        compatible = "zmk,behavior-host";
-        mac-layer = <&mac_layer>;
-        windows-layer = <&windows_layer>;
+        // Define the host OS condition
+        os_host {
+            label = "OS Host";
+            compatible = "zmk,behavior-host";
+            mac-layer = <&mac_layer>;
+            windows-layer = <&windows_layer>;
+        };
     };
 };
