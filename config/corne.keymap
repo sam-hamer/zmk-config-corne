@@ -92,13 +92,13 @@
         };
     };
 
-    &layer_switch {
+    layer_switch {
         label = "Layer Switch";
         compatible = "zmk,behavior";
         bindings = <&os_host>;
     };
 
-    &os_host {
+    os_host {
         label = "OS Host";
         compatible = "zmk,behavior-host";
         mac-layer = &mac_layer;
