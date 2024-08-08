@@ -78,7 +78,7 @@
 &kp TAB    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
 &trans     &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
 &kp LSHFT  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                           &trans  &trans  &trans    &trans    &mo 4     &trans
+                           &trans  &mo 4   &trans    &trans    &trans    &trans
             >;
         };
 
@@ -93,7 +93,7 @@
 &kp TAB    &kp EXCL           &kp AT            &kp HASH         &kp DLLR               &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR        &kp RPAR         &kp BSPC
 &kp LCTRL  &kp LEFT_BRACKET   &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp PAGE_UP      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT        &kp RBKT         &kp GRAVE
 &kp LSHFT  &kp RIGHT_BRACKET  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN    &kp UNDER  &kp PLUS   &kp PIPE   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp TILDE
-                                                &trans           &mo 4                  &trans           &trans     &trans     &trans
+                                                &trans           &trans                 &trans           &trans     &mo 4      &trans
             >;
         };
 
