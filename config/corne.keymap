@@ -61,7 +61,7 @@
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E                    &kp R      &kp T                 &kp Y                &kp U            &kp I                &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D                    &kp F      &kp G                 &kp H                &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
+&kp CAPS   &kp A  &kp S  &kp D                    &kp F      &kp G                 &kp H                &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C                    &kp V      &kp B                 &kp N                &kp M            &kp COMMA            &kp DOT  &kp FSLH  &kp ESC
                          &mt LEFT_CONTROL ESCAPE  &lt 3 TAB  &mt LEFT_ALT ENTER    &mt RIGHT_GUI SPACE  &lt 2 BACKSPACE  &mt RIGHT_ALT GRAVE
             >;
@@ -76,7 +76,7 @@
 
             bindings = <
 &kp TAB    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
-&trans     &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&kp CAPS   &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
 &kp LSHFT  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
                            &trans  &mo 4   &trans    &trans    &trans    &trans
             >;
@@ -90,10 +90,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL           &kp AT            &kp HASH         &kp DLLR               &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR        &kp RPAR         &kp BSPC
-&kp LCTRL  &kp LEFT_BRACKET   &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp PAGE_UP      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT        &kp RBKT         &kp GRAVE
-&kp LSHFT  &kp RIGHT_BRACKET  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN    &kp UNDER  &kp PLUS   &kp PIPE   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp TILDE
-                                                &trans           &trans                 &trans           &trans     &mo 4      &trans
+&kp TAB    &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR        &kp RPAR         &kp BSPC
+&kp CAPS   &trans    &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp PAGE_UP      &kp MINUS  &kp EQUAL  &kp BSLH   &kp LBKT        &kp RBKT         &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans         &trans            &kp PAGE_DOWN    &kp UNDER  &kp PLUS   &kp PIPE   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp TILDE
+                             &trans         &trans            &trans           &trans     &mo 4      &trans
             >;
         };
 
